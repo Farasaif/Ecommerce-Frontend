@@ -1,2 +1,0 @@
-# Loudoun-Learners
-Loudoun Learners
