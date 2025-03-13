@@ -41,12 +41,12 @@
             class="product-image"
             src="https://i.pinimg.com/originals/57/81/fe/5781feddefe3241f79f4818ba1792185.jpg"
          />
-
-         <select name="wreathSizes" id="wreathSizes">
-            <option value="SMALL">SMALL</option>
-            <option value="MEDIUM">MEDIUM</option>
-            <option value="LARGE">LARGE</option>
-            <option value="EXTRALARGE">EXTRALARGE</option>
+<div  id="price"></div>
+         <select name="wreathSizes" id="wreathSizes" onchange="calculateCost(this.value)">
+            <option value="9.99">SMALL</option>
+            <option value="12.99">MEDIUM</option>
+            <option value="15.99">LARGE</option>
+            <option value="22.99">EXTRALARGE</option>
          </select>
          <button class="AddtoCart-button" onclick="calculateCost()">AddtoCart</button>
         <ol>

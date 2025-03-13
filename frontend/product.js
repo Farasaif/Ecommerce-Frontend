@@ -11,7 +11,9 @@ function clickedAddToCart() {
 }
 
 let cost = 0;
-function calculateCost() {
-    cost += 20;
-    alert("Cart total = " + cost);
+function calculateCost(cost) {
+   
+   document.getElementById("price").innerHTML="$"+cost;
 }
+
+console.log(prices);
