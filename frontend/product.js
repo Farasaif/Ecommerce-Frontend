@@ -1,15 +1,4 @@
 
-// let x = 30;
-
-
-// function clickedAddToCart() {
-//     alert("The product was added");
-//     x += 5;
-//     console.log("x: ", x);
-//     console.log("x: " + x);
-//     console.log(x);
-    
-// }
 const prices = [
     {size: "Small", price: 9.99 },
     {size: "Medium", price: 12.99},
@@ -21,40 +10,31 @@ console.log('this is the select element', selectElement);
 prices.forEach(priceObj => {
     let option = document.createElement('option');
     option.textContent = `${priceObj.size.toUpperCase()} - $${priceObj.price.toFixed(2)}`;
+    option.value = priceObj.price;
     selectElement.appendChild(option);
 });
 
 
 window.onload = function() {
-    //TODO: Move the prices variable above this function
-    //TODO: Use Document.getElementById to get the select and loop
-    // through the prices variable and add each 'name' as an option
-let selectedvalue= document.getElementById("wreathSizes").value ;
+    let selectedvalue= document.getElementById("wreathSizes").value ;
 document.getElementById("price").innerHTML="$" + selectedvalue;
 };
 
-//let totalPrice = 0;
-//function calculateCost(cost) {
-  //  document.getElementById("price").innerHTML="$"+cost;
-//}
-const newTotal = cart.reduce((total, cartItem) => {
-    return total + cartItem.amount * parseFloat(cartItem.price.replace('$', ''));
-  }, 0);
-  setTotal(newTotal);
-  
+let totalPrice = 0;
+function calculateCost(cost) {
+    document.getElementById("price").innerHTML="$"+cost;
+}
+
 function addToCart() {
-    // We want to keep a rolling price of everything added
     updateTotalPrice();
     alert("item Added to Cart " + totalPrice);
 }
 
 function updateTotalPrice(){
     let price = document.getElementById("price").innerHTML;
-    let dollarIndex = price.indexOf("$");
-    price = price.substring(dollarIndex);
     console.log('the price is', price);
-    //let numericPrice = parseFloat(price.substring(1));
-    totalPrice = totalPrice + parseFloat(price);
+    let numericPrice = parseFloat(price.substring(1));
+    totalPrice = totalPrice + numericPrice; 
     console.log("updated Total Price:" + totalPrice);
 }
 
