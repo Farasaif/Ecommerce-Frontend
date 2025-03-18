@@ -2,10 +2,18 @@
 <html>
     <head>
         <link rel="stylesheet" href="test.css" />
-        <script src="product.js"></script>
+        
         <title>Wreath Webstore.com</title>
+        <title>Cart Icon on the Right</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <title>Dynamic Dropdown</title>
+        <script>src= "script.js"</script>
+        <title>Items Added Message</title>
     </head>
+    
     <body>
+        <label for="varieties">Choose a variety.</label>
+        <select id ="varieties"></select>
 
         <header>
             <h1>Wreath Dream Store</h1>
@@ -23,32 +31,35 @@
             <button class="subscribe-button">SUBSCRIBE</button>
             <button class="join-button">JOIN</button>
             <button class="tweet-button">TWEET</button>
-            
         </div>
-        
+        <div class="cart-icon">
+            
+            <span class="cart-icon">&#128722</span>
+            <span id="cart-count" class="cart-count">0</span>
+            <div id ="cart-items">
 
+            </div>
+        </div> 
         <p>
             This is a story how I created my Dream Store. I love creating
             wreaths. I sell items to create your own wreath for holidays
             ,celebrations and other Occassions.
         </p>
         <p>
-            I invite everyone to visit my store and try making Wreath for your
-            Home.Bussiness or as a Gift.
+            I invite everyone to visit my store and try making Wreaths for your
+            home,bussiness or as a gift.
         </p>
 
         <img
             class="product-image"
             src="https://i.pinimg.com/originals/57/81/fe/5781feddefe3241f79f4818ba1792185.jpg"
          />
-<div  id="price"></div>
+         
+    <div id="price"></div>
          <select name="wreathSizes" id="wreathSizes" onchange="calculateCost(this.value)">
-            <option value="9.99">SMALL</option>
-            <option value="12.99">MEDIUM</option>
-            <option value="15.99">LARGE</option>
-            <option value="22.99">EXTRALARGE</option>
+            <!--Remove Options Here-->
          </select>
-         <button class="AddtoCart-button" onclick="calculateCost()">AddtoCart</button>
+         <button class="AddtoCart-button" onclick="addToCart()">AddtoCart</button>
         <ol>
             <li>beads</li>
             <li>flowers</li>
@@ -64,33 +75,35 @@
         <p>I have Wreath rings available .</p>
         <h3>They come in different sizes that you can choose:</h3>
         <div>
-        <Table class="Wreath Rings">
-            <caption>Wreath Rings Sizes:</caption>
-            <table class ="SMALL">
-             <thead> 
-                <tbody>
-                <tr>
-                    <th>SMALL</th>
-                    <th>MEDIUM</th>
-                    <th>LARGE</th>
-                    </tr>
-                    </thead>
-                </tbody> 
-                <table class="MEDIUM">
-                    <caption>Different Kinds of Ribbons</caption>
-                    <thead>
-                        <tr>
-                            <th>Floral</th>
-                            <th>Solid Colors</th>
-                            <th>Lace</th>
-                            <th>Burlup</th>
-                            <th>Pokadots</th>
+            <Table class="Wreath Rings">
+                <caption>Wreath Rings Sizes:</caption>
+                <table class ="SMALL">
+                    <thead> 
+                        <tbody>
+                            <tr>
+                            <th>SMALL</th>
+                            <th>MEDIUM</th>
+                            <th>LARGE</th>
+                            </tr>
+                            </thead>
+                        </tbody> 
+                        <table class="MEDIUM">
+                            <caption>Different Kinds of Ribbons</caption>
+                            <thead>
+                                <tr>
+                                    <th>Floral</th>
+                                    <th>Solid Colors</th>
+                                    <th>Lace</th>
+                                    <th>Burlup</th>
+                                    <th>Pokadots</th>
 
-                        </tr>
+                                </tr>
+                            </thead>
+                        <table>
                     </thead>
-                    </table>
-                    </Table>
-                </div>
+                </table>
+            </Table>
+        </div>
                 <h3>
                     <a href="https://www.youtube.com/>">
                         Free web Tutorials to make Wreaths:
@@ -98,11 +111,12 @@
                 </h3>
                 
                 <button class="CLICKHERE-button">CLICK HERE</button>
-        
+                <button type="button"></button>    
         <section>Add suggetions</section>
         <footer>
             Copyright&copy; SalesRep:FS<br />
             <a href="writetoFS@store.com">FS@store.com</a>
         </footer>
     </body>
+    <script src="product.js"></script>
 </html>

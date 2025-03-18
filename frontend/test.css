@@ -2,6 +2,8 @@ body {
     background: #ffffff url("img_wreath.png");no-repeat right top;
      background-color: lightblue;
 }
+
+
 header {
     background-color: gray;
     color:white;
@@ -179,3 +181,31 @@ thead th {
     border-radius: 8px;
 
 }
+.Cart-Icon {
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.Cart-Icon i{
+    color: white;
+}
+body {
+    margin : 0;
+    padding: 0;
+
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+
+}
+
+
