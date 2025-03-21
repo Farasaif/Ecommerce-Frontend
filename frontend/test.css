@@ -6,12 +6,20 @@ body {
 
 header {
     background-color: gray;
-    color:white;
+    color: white;
     padding: 10px;
-    text-align: none;
+    display: flex;
+    justify-content: space-between; /* Push elements apart */
+    align-items: center; /* Vertically align items */
+}
 
+.cart-icon {
+    display: flex;
+    align-items: center; /* Vertically align cart icon */
+}
 
-    
+.cart-icon span {
+    margin-left: 10px; /* Adds space between icon and count */
 }
 header h1{
     font-size: 2em;
@@ -182,10 +190,6 @@ thead th {
     margin-left: 8px;
     cursor: pointer;
 
-}
-.cart-icon {
-    position: relative;
-    display: inline-block;
 }
 .cart-image {
     width: 40px;
