@@ -1,4 +1,3 @@
-
 const prices = [
     {size: "Small", price: 9.99 },
     {size: "Medium", price: 12.99},
@@ -14,7 +13,6 @@ prices.forEach(priceObj => {
     selectElement.appendChild(option);
 });
 
-
 window.onload = function() {
     let selectedvalue= document.getElementById("wreathSizes").value ;
 document.getElementById("price").innerHTML="$" + selectedvalue;
@@ -25,9 +23,11 @@ function calculateCost(cost) {
     document.getElementById("price").innerHTML="$"+cost;
 }
 
-function addToCart() {
+function addToCart(sel) {
     updateTotalPrice();
-    alert("item Added to Cart " + totalPrice);
+    let productName = document.getElementById("wreathSizes");
+    productName = productName.options[selectElement.selectedIndex].text;
+    alert(productName + " Wreath Added (Cost "+  document.getElementById("price").innerHTML+")  - totalPrice "+totalPrice);
 }
 
 function updateTotalPrice(){
@@ -47,6 +47,7 @@ function getPriceBySize(size) {
 }
 return null;
 }
+
 let priceForS = getPriceBySize("Small");
 console.log(priceForS);
 let priceForM = getPriceBySize("Medium");
@@ -64,4 +65,8 @@ let cartItemCount = 0;
 function updateCartCount() {
     cartCountElement.textContent = cartItemCount;
 }
+addToCartButton.addEventListener('click',function() {
+    cartItemCount++;
+    updateCartCount();
+});
 

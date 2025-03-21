@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="test.css" />
         
         <title>Wreath Webstore.com</title>
         <title>Cart Icon on the Right</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <title>Dynamic Dropdown</title>
+        <title>Shopping Cart</title>
         <script>src= "script.js"</script>
     </head>
     
     <body>
-        <label for="varieties">Choose a variety.</label>
-        <select id ="varieties"></select>
-
-        <header>
-            <h1>Wreath Dream Store</h1>
-            <nav>
+        <!--label for="varieties">Choose a variety.</label-->
+        <!--select id ="varieties"></select-->
+        <!--select id="select" onchange="alertMessage();"-->
+        
+ <header class ="cart-header">
+     <h1>Wreath Dream Store</h1>
+            <nav class = "top-navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -24,22 +27,28 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div class ="cart-icon">
+                <span class ="cart-icon">&#128722</span>
+                <span id = "cart-count" class="cart-count">0</span>
+            </div>
         </header>
 
         <div class="subscribeButtons">
             <button class="subscribe-button">SUBSCRIBE</button>
             <button class="join-button">JOIN</button>
             <button class="tweet-button">TWEET</button>
+            <button onclick="addToCart('Wreath',12.99,25.99)">Add Wreath to Cart</button>
         </div>
-        <div class="cart-icon">
-            
-            <span class="cart-icon">&#128722</span>
-            <span id="cart-count" class="cart-count">0</span>
-            <div id ="cart-items">
-
-            </div>
-        </div> 
-        <p>
+        <!--div class="cart-icon"-->
+            <!--span class="cart-icon">&#128722</span-->
+           <!--span id="cart-count" class="cart-count">0</span-->
+            <div id ="cart-items-count">
+         </div>
+         <button class = "btn-buy">Buy Now</button>
+         <button class = "btn-view-cart">View Cart</button>
+         <i class = "ri-close-line" id ="cart-close"></i>
+         <br>
+          <p>
             This is a story how I created my Dream Store. I love creating
             wreaths. I sell items to create your own wreath for holidays
             ,celebrations and other Occassions.
@@ -48,16 +57,24 @@
             I invite everyone to visit my store and try making Wreaths for your
             home,bussiness or as a gift.
         </p>
+    
 
         <img
             class="product-image"
             src="https://i.pinimg.com/originals/57/81/fe/5781feddefe3241f79f4818ba1792185.jpg"
          />
          
+         
     <div id="price"></div>
-         <select name="wreathSizes" id="wreathSizes" onchange="calculateCost(this.value)">
+         <select name ="wreathSizes" id="wreathSizes" onchange="calculateCost(this.value)">
+            <!--option value="small"></option-->
+            <!--option value="medium"></option-->
+            <!--option value="large"></option-->
+            <!--option value="xtralarge"></option-->
          </select>
          <button class="AddtoCart-button" onclick="addToCart()">AddtoCart</button>
+         
+         <h3>lists of items:</h3>
         <ol>
             <li>beads</li>
             <li>flowers</li>
@@ -66,12 +83,14 @@
             <li>ribbons</li>
             <li>bows</li>
         </ol>
+        <h3 id = "description-header">Description:</h3>
         <p>
             I will be posting videos and ideas. So please go on to on my link
             and subscribe. Please tweet me if any question.
         </p>
         <p>I have Wreath rings available .</p>
         <h3>They come in different sizes that you can choose:</h3>
+        
         <div>
             <Table class="Wreath Rings">
                 <caption>Wreath Rings Sizes:</caption>
@@ -109,7 +128,7 @@
                 </h3>
                 
                 <button class="CLICKHERE-button">CLICK HERE</button>
-                <button type="button"></button>    
+                <!--button type="button"></button-->  
         <section>Add suggetions</section>
         <footer>
             Copyright&copy; SalesRep:FS<br />
