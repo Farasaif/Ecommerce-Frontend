@@ -3,6 +3,43 @@ body {
      background-color: lightblue;
 }
 
+
+header {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Push elements apart */
+    align-items: center; /* Vertically align items */
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center; /* Vertically align cart icon */
+}
+
+.cart-icon span {
+    margin-left: 10px; /* Adds space between icon and count */
+}
+header h1{
+    font-size: 2em;
+    margin:0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+header nav ul li a{
+    display: inline;
+    margin-right: 20px;
+}
+header nav ul li a :hover{
+    text-decoration: underline;
+}
+
 div {
     background-color: lightblue;
 }
@@ -19,7 +56,11 @@ p {
 }
 
 img {
-   /* width: 100px;*/
+    width: 100px;
+    color: brown;
+    background-color: #ffffff;
+    border: none
+
 }
 
 .product-image {
@@ -31,7 +72,7 @@ img {
   }
 
   ol {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .subscribe-button {
@@ -86,12 +127,13 @@ img {
 .tweet-button:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 00.15);
 }
-.cart-button {
+.AddtoCart-button {
+
     background-color: white;
     color: black;
     border:none;
-    height:20px;
-    width:40px;
+    height:36px;
+    width:83px;
     border-radius: 10px;
     font-weight: bold;
     font-size:15px;
@@ -99,14 +141,74 @@ img {
     cursor: pointer;
 
 }
-.cart-button:hover{
+.AddtoCart-button:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 00.15);
 
 }
 table {
+    width:100%;
     border-collapse: collapse;
-    width: 50px;;
+    margin-bottom: 20px;
 }
-th{
-    height:30px;
+caption {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
 }
+thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+.CLICKHERE-button {
+    background-color:blue;
+    color: white;
+    border:none;
+    height:36px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.CLICKHERE-button:hover {
+    box-shadow: 5px 5px 10px ;
+}
+.subscribeButtons {
+    padding-top: 10px;
+}
+
+#wreathSizes{
+    background-color: white;
+    color: blue;
+     height: 30px;
+    font-weight: bold;
+    font-size: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+
+}
+.cart-image {
+    width: 40px;
+    height: 40px;
+}
+body {
+    margin : 0;
+    padding: 0;
+    
+
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+
+}
+
+
