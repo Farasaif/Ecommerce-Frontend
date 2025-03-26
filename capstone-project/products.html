@@ -1,1 +1,67 @@
-<button>Hello</button>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!--meta name="viewport" content="width=device-width, initial-scale=1.0" /-->
+        <title>PET CARE MART</title>
+        <!--link
+            rel="icon"
+            type="image/png"
+            href="https://via.placeholder.com/32x32.png?text=Shop"
+        /-->
+        <link rel="stylesheet" href="product.css" />
+        
+    </head>
+    <body>
+        <header class ="cart-header">
+            <h1>MY SUPPLY MART</h1>
+            <nav class = "top-navigation">
+
+            </nav>
+        </header>
+            <div class="logo">
+                <h1>PET CARE MART</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="products-link">Products</a></li>
+                    <li>
+                        <a href="#" id="cart-link"
+                            >&#128722<span id="cart-count">0</span></a>
+                        
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                
+            </div>
+        </header>
+
+        <main>
+            <section id="products-container">
+                <h4>Our List of Products</h4>
+                <div id="product-list" class="product-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <section id="cart-container" class="hidden">
+                <h2>Your Cart</h2>
+                <div id="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <div id="cart-summary">
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                    <button id="checkout-btn">Checkout</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 E-Commerce Store. All Rights Reserved.</p>
+        </footer>
+
+        <script src="products.js"></script>
+    </body>
+</html>
