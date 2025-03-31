@@ -45,10 +45,9 @@ async function fetchProducts() {
         console.error('Error fetching products:', error);
     }
 }
-
-// Display Products
-function displayProducts() {
-    productList.innerHTML = products.map(product => `
+     //  Display Products
+        function displayProducts() {
+        productList.innerHTML = products.map(product => `
         <div class="product-card">
             <img src="${product.picture_url}" alt="${product.description}">
             <h3>${product.name}</h3>
@@ -63,6 +62,13 @@ function displayProducts() {
         button.addEventListener('click', addToCart);
     });
 }
+
+
+    // Add event listeners to Add to Cart buttons
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
+
 
 // Add to Cart Function
 function addToCart(event) {
