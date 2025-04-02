@@ -1,54 +1,40 @@
-// POST Request Handler (submit form data)
-document.getElementById('postForm').addEventListener('submit', function (e) {
-    e.preventDefault();  // Prevent form from submitting the default way
+const productInfoStuff = document.getElementById('productCard');
 
-    // Get form data
-    const productName = document.getElementById('productName').value;
-    const productPrice = document.getElementById('productPrice').value;
+async function printProductInfo(){
+    const currWebsiteUrl = window.location.href;
+    console.log('is this teh website?', currWebsiteUrl);
+    let productIdTest = currWebsiteUrl.slice(-1);
+    console.log('did i get the id??', productIdTest);
 
-    const data = {
-        name: productName,
-        price: productPrice
-    };
+    //http://3.136.18.203:8000/products/2/
 
-    // POST request to a server
-    fetch('http://yourserver.com/products', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)  // Send the data as a JSON string
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Product added:', data);
-        alert('Product added successfully!');
-        // Optionally reset the form
-        document.getElementById('postForm').reset();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error adding product.');
-    });
-});
+    const response = await fetch('http://3.136.18.203:8000');
+    console.log("testing API",response);
+    let unit = await response.json();
+    console.log("unitABBHDGH", unit);
 
-// GET Request Handler (fetch product list)
-document.getElementById('getProductsBtn').addEventListener('click', function () {
-    fetch('http://yourserver.com/products')
-    .then(response => response.json())
-    .then(data => {
-        const productList = document.getElementById('productList');
-        productList.innerHTML = '';  // Clear any existing list items
+    const productsURL = unit.products; //'http://3.136.18.203:8000/products/'
+    const productsResponse = await fetch(productsURL);
+    console.log('test response of products', productsResponse);
+    products = await productsResponse.json();
+    console.log('I just threw in some products...',products);
 
-        // Loop through the product data and display it
-        data.forEach(product => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${product.name} - $${product.price}`;
-            productList.appendChild(listItem);
-        });
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error fetching products.');
-    });
-});
+    let specificProduct = products.filter(p => p.product_id == productIdTest)[0];
+
+    console.log('what ze product?', specificProduct);
+
+
+    productInfoStuff.innerHTML = `
+        <div class="product-card" id=${specificProduct.product_id}>
+            <img src="${specificProduct.picture_url}" alt="${specificProduct.description}">
+            <h3>${specificProduct.name}</h3>
+            <h3>${specificProduct.categoryName}</h3>
+            <p class="price">$${specificProduct.starting_at_price}</p>
+            <button class="add-to-cart-btn" data-id="${specificProduct.product_id}">Add to Cart</button>
+        </div>
+        `;
+    // print all the product information
+}
+
+
+printProductInfo();

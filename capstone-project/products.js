@@ -2,6 +2,7 @@
 let products = [];
 let categories = [];
 let cart = [];
+let productId= 0;
 
 // DOM Elements
 const productList = document.getElementById('product-list');
@@ -48,12 +49,12 @@ async function fetchProducts() {
      //  Display Products
         function displayProducts() {
         productList.innerHTML = products.map(product => `
-        <div class="product-card">
+        <div class="product-card" id=${product.product_id}>
             <img src="${product.picture_url}" alt="${product.description}">
             <h3>${product.name}</h3>
             <h3>${product.categoryName}</h3>
             <p class="price">$${product.starting_at_price}</p>
-            <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
+            <button class="add-to-cart-btn" data-id="${product.product_id}">Add to Cart</button>
         </div>
     `).join('');
 
@@ -126,8 +127,18 @@ function checkout() {
     updateCart();
 }
 
+
+
 // Event Listeners
 checkoutBtn.addEventListener('click', checkout);
+document.addEventListener("click", function(event) {
+    if (event.target.closest(".product-card")) {
+        const url = "product.html?";
+        productId = event.target.closest("div").id;
+        console.log("productId",productId);
+        window.location.href = url + "product_id=" + productId;
+    }
+});
 
 // Initialize
 fetchProducts();
