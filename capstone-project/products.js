@@ -2,7 +2,7 @@
 let products = [];
 let categories = [];
 let cart = [];
-let productId= 0;
+//let productId= 0;
 
 // DOM Elements
 const productList = document.getElementById('product-list');
@@ -17,8 +17,8 @@ async function fetchProducts() {
     try {
         // Replace with your actual API endpoint
         const response = await fetch('http://3.136.18.203:8000');
-        console.log("testing API",response);
-        let unit = await response.json();
+        //console.log("testing API",response);
+        const unit = await response.json();
         console.log("unitABBHDGH", unit);
         
         const productsURL = unit.products; //'http://3.136.18.203:8000/products/'
@@ -63,18 +63,10 @@ async function fetchProducts() {
         button.addEventListener('click', addToCart);
     });
 }
-
-
-    // Add event listeners to Add to Cart buttons
-    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', addToCart);
-    });
-
-
 // Add to Cart Function
 function addToCart(event) {
     const productId = event.target.dataset.id;
-    const product = products.find(p => p.id === parseInt(productId));
+    const product = products.find(p => p.product_id === parseInt(productId));
     
     // Check if product already in cart
     const existingCartItem = cart.find(item => item.id === product.id);
