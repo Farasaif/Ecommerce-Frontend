@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PET CARE MART</title>
+        <link rel="stylesheet" href="products.css" />
+    </head>
+    <body>
+        <header class="cart-header">
+            <div class="logo">
+                <a href="#" class="logo">
+                    <img
+                        src="images/pngtree-pet-shop-logo-template-png-image_5565598.png"
+                        alt="Pet Care Mart Logo"
+                    />
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="products-link">Products</a></li>
+                    <li>
+                        <a href="javascript:void(0)" id="cart-link">
+                            &#128722; <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h1>MY PET SUPERMART</h1>
+        </header>
+
+        <main>
+            <section id="products-container">
+                <h4>Our List of Products</h4>
+                <div id="product-list" class="product-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <section id="cart-container" class="hidden">
+                <h2>Your Cart</h2>
+                <div id="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <div id="cart-summary">
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                    <button id="checkout-btn">Checkout</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 E-Commerce Store. All Rights Reserved.</p>
+        </footer>
+
+        <script src="products.js"></script>
+    </body>
+</html>
